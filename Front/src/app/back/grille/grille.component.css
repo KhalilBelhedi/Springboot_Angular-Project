@@ -1,0 +1,81 @@
+.btn-custom {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #2a1b57 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-custom:hover {
+  background: transparent;
+  color: #c797eb;
+}
+
+.btn-custom:before,
+.btn-custom:after {
+  position: absolute;
+  content: "";
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:before {
+  right: 0;
+  bottom: 0;
+  height: 0%;
+  width: 2px;
+}
+
+.btn-custom:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+}
+
+.btn-custom:hover:before {
+  height: 100%;
+}
+
+.btn-custom:hover:after {
+  width: 100%;
+}
+
+.table-product th, .table-product td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-product {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-product th {
+  background-color: #f0ecfc;
+  color: #2a1b57;
+}
+
+.table-product tbody tr:hover {
+  background-color: #f0ecfc;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0ecfc;
+}

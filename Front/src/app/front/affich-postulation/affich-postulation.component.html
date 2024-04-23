@@ -1,0 +1,33 @@
+
+<div class="container content"> <!-- Added 'content' class -->
+  <div class="row">
+    <!-- Search Input -->
+    <div class="col-md-12">
+      <div class="filter-container">
+        <label for="filterOption">Filtrer par :</label>
+        <select id="filterOption" class="custom-select" [(ngModel)]="filterOption" (change)="applyFilter()">
+          <option value="accepte">accepté</option>
+          <option value="refuse">refusé</option>
+          <option value="attente">en attente</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Postulations List -->
+  <div class="row sujets-list"> <!-- Added 'sujets-list' class -->
+    <div class="col-md-12">
+      <div class="postulations-list">
+        <div *ngFor="let postulation of postulations" class="sujet-item"> <!-- Changed 'postulation-item' to 'sujet-item' -->
+          <!-- <h2>{{ postulation.user.nom }}</h2> -->
+          <h4>{{ postulation.titrecandidature }}</h4>
+          <p><strong>Sujet:</strong> {{ postulation.sujet.titre }} </p>
+          <p><strong>Nom entreprise :</strong> {{ postulation.sujet.nomentreprise }} </p>
+          <p><strong>Mail entreprise :</strong> {{ postulation.sujet.mailentreprise }} </p>
+          <p><strong>Durée:</strong> {{ postulation.datedeb | date:'dd-MM-yyyy' }} - {{ postulation.datefin | date:'dd-MM-yyyy' }}</p>
+          <p><strong>Lieu :</strong> {{ postulation.sujet.lieu }} </p>
+          <p><strong>Status:</strong> {{ postulation.status === 1 ? 'Accepté' : (postulation.status === 2 ? 'Refusé' : 'En attente') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

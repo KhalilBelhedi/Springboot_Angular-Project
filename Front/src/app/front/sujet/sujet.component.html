@@ -1,0 +1,40 @@
+
+
+<div class="container">
+    <div class="row">
+      <!-- Search Input -->
+      <div class="col-md-12">
+        <input type="text" [(ngModel)]="searchTerm" (input)="search()" placeholder="Chercher ">
+      </div>
+
+      <div class="col-md-12">
+        <select [(ngModel)]="filterOption" (change)="applyFilter()">
+          <option value="nbreEtudiantAsc">par nombre d'etudiant Asc</option>
+          <option value="nbreEtudiantDesc">par nombre d'etudiant Desc</option>
+          <option value="dureeStageAsc">par duree Asc</option>
+          <option value="dureeStageDesc">par duree Desc</option>
+
+        </select>
+      </div>
+
+    </div>
+    <!-- Sujets List -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sujets-list">
+          <div *ngFor="let sujet of sujets" class="sujet-item">
+            <h2>{{ sujet.nomentreprise }}</h2>
+            <h4>{{ sujet.titre }}</h4>
+            <p><strong>Description:</strong> {{ sujet.description }}</p>
+            <p><strong>Durée:</strong> {{ sujet.duree }}</p>
+            <p><strong>Lieu:</strong> {{ sujet.lieu }}</p>
+            <p><strong>Contact :</strong> {{ sujet.mailentreprise }}</p>
+            <p><strong>Nombre d'étudiants requis:</strong> {{ sujet.nbretudiant }}</p>
+            <p><strong>Exigences:</strong> {{ sujet.requirements }}</p>
+            <p><strong>Type de sujet:</strong> {{ sujet.typesujet }}</p>
+            <button class="btn btn-primary" (click)="postuler(sujet.idsujet)">Postuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

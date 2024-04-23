@@ -1,0 +1,49 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="card card-default">
+      <div class="card-header">
+        <h1 style="padding-top: 16px">Grille List</h1>
+        <!-- Ajoutez un bouton pour ajouter une nouvelle grille si nécessaire -->
+        <div class="dropdown">
+          <button mat-raised-button class="custom-btn btn-8" (click)="openAjoutGrilleDialog()">
+            <span><b>Ajouter</b></span>
+          </button>
+
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="grilleTable" class="table table-hover table-product" style="width:100%">
+          <thead>
+          <tr>
+
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let grille of grilles">
+
+            <td>{{ grille.descriptionGrille }}</td>
+            <td>
+
+              <a class="dropdown-item" style="color: rgb(16, 132, 14);" (click)="openUpdateGrilleDialog(grille)">
+                <b>Modifier</b>
+                <span class="mdi mdi-grease-pencil" style="padding-left: 37%;"></span>
+              </a>
+
+              <a class="dropdown-item" style="color: rgb(226, 20, 20);" (click)="deleteGrille(grille.idGrille)"><b>Supprimer</b><span class="mdi mdi-delete" style="padding-left: 23%;"></span></a>
+
+              <!--     <a class="dropdown-item" style="color: rgb(226, 20, 20);" (click)="deleteGrille(grille.idGrille)">
+                     <b>Supprimer</b>
+                     <span class="mdi mdi-delete" style="padding-left: 23%;"></span>
+                   </a>
+                 </td> -->
+          </tr>
+          </tbody>
+        </table>
+        <!-- Ajoutez une pagination si nécessaire -->
+      </div>
+    </div>
+  </div>
+</div>

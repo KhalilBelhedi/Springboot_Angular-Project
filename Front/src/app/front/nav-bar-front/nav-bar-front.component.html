@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8B0000;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user/conventionF">Convention</a>
+        </li>
+        <li *ngIf="role == 'etudiant'" class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/sujets">Sujets</a>
+        </li>
+        <li *ngIf="role == 'Agententreprise'" class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/affichsujet">Sujets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/affich_postulation">Mes postulations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user/postf">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/fileupload">Mes fichiers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/reclamation">Reclamation</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" routerLink="/user/journal">Journal</a>-->
+<!--        </li>-->
+
+        <li *ngIf="role == 'etudiant'" class="nav-item">
+          <a class="nav-link active" aria-current="page" (click)="goJournal()">Journal</a>
+          </li>
+        <li *ngIf="role == 'Agententreprise'" class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user/journalencadrant/{{email}}">Journal</a>
+        </li>
+        <li>
+          <a class="nav-link active" aria-current="page" routerLink="/user/stage">Stage En Cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user/myconventions">Mes Convention</a>
+        </li>
+        <li class="nav-item dropdown ms-auto">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a (click)="logout()" class="dropdown-item">Log out</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

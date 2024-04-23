@@ -1,0 +1,96 @@
+.ajout-button {
+  text-align: left;
+  margin-top: 20px; /* Espacement du haut */
+}
+
+.btn-ajout {
+  background-color: #800617; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 12px 24px; /* Espacement à l'intérieur du bouton */
+  font-size: 16px; /* Taille de la police */
+  border: none; /* Supprimer la bordure */
+  border-radius: 5px; /* Bordure arrondie */
+  cursor: pointer; /* Curseur de souris */
+  transition: background-color 0.3s; /* Animation de transition */
+}
+
+.btn-ajout:hover {
+  background-color: #ba273b; /* Changement de couleur au survol */
+}
+
+
+/*
+.custom-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card-header {
+  background-color: #343a40;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+
+.custom-card-body {
+  padding: 20px;
+}
+
+.custom-heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.details {
+  margin-bottom: 20px;
+}
+
+.detail {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.custom-button {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  text-align: center;
+}
+
+.custom-action-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.custom-action-button:hover {
+  background-color: #0056b3;
+}
+*/

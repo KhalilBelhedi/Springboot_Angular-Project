@@ -1,0 +1,59 @@
+<!--<div fxFlex="3.5rem" fxLayoutAlign="start center">
+  <span class="smr-caption--lg">
+    <h1><b><u style="padding-left: 250px;color:#6c43a1;">Modifier Tache</u></b></h1>
+  </span>
+</div>
+
+<div fxFlex="auto" fxFlexAlign="start" fxFill>
+  <br>
+  <br>
+  <form #form="ngForm">
+    <div fxLayout="row" fxLayoutAlign="center center" fxFill>
+      <div fxFlex="70" fxFlex.xs="100">
+        <mat-form-field color="accent">
+          <input matInput
+                 name="descriptionTache"
+                 aria-label="Description de la tâche"
+                 class="form-control rounded-0"
+                 required
+                 type="text"
+                 [(ngModel)]="editedTache.descriptiontache"
+                 placeholder="Description de la tâche"
+                 #descriptionTache="ngModel"
+          >
+          <div *ngIf="descriptionTache.touched && descriptionTache.invalid">
+            <div *ngIf="descriptionTache.errors['required']">
+              La description de la tâche est obligatoire !
+            </div>
+          </div>
+        </mat-form-field>
+
+
+        <div style="padding-left: 25%">
+          <button class="custom-btn btn-8" mat-button (click)="onNoClick()">
+            <span><b>Annuler</b></span>
+          </button>
+          <button class="custom-btn btn-8" mat-stroked-button color="accent" type="button" (click)="saveChanges()">
+            <span><b>Enregistrer</b></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> -->
+<!-- update-tache-dialog.component.html -->
+<!-- update-tache-dialog.component.html -->
+<h2 mat-dialog-title>Mettre à jour la tâche</h2>
+<mat-dialog-content>
+  <form [formGroup]="updateTacheForm">
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="descriptiontache">
+    </mat-form-field>
+    <!-- Ajoutez d'autres champs si nécessaire -->
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onUpdate()">Mettre à jour</button>
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>

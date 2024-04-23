@@ -1,0 +1,72 @@
+
+    <!-- Page content wrapper -->
+
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-danger">
+                <h4 class="card-title" i18n="@@conventionTitle">Convention</h4>
+                <p class="card-category" i18n="@@conventionListDesc">List of Conventions for Validation</p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="text-primary">
+                    <th i18n="@@conventionID">ID</th>
+                    <th i18n="@@conventionCompanyName">Nom Entreprise</th>
+                    <th i18n="@@conventionStartDate">Date Début</th>
+                    <th i18n="@@conventionEndDate">Date Fin</th>
+                    <th i18n="@@conventionAddress">Adresse</th>
+                    <th i18n="@@conventionPhoneNumber">Num Téléphone</th>
+                    <th i18n="@@conventionMentorName">Nom Encadrant</th>
+                    <th i18n="@@conventionMentorEmail">Email Encadrant</th>
+                    <th i18n="@@conventionValidity">Validité</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let convention of conventions">
+
+                      <td>{{ convention.idConvention }}</td>
+                      <td>{{ convention.nomEntreprise }}</td>
+                      <td>{{ convention.dateDebut | date: 'shortDate' }}</td>
+                      <td>{{ convention.dateDebut | date: 'shortDate' }}</td>
+                      <td>{{ convention.adresse }}</td>
+                      <td>{{ convention.numTel }}</td>
+                      <td>{{ convention.nomEncadrant }}</td>
+                      <td>{{ convention.emailEncadrant }}</td>
+                      <!-- ... other table data cells ... -->
+                      <td>
+                        <ng-container *ngIf="convention.isvalid; else notValidated" i18n="@@validated">
+                          Validated
+                        </ng-container>
+                        <ng-template #notValidated i18n="@@notValidated">
+                          Not Validated
+                        </ng-template>
+                      </td>
+                      <td>
+                        <button [disabled]="convention.isvalid" (click)="validateConvention(convention)" class="btn btn-success btn-sm">
+                          <ng-container *ngIf="convention.isvalid; else validate" i18n="@@conventionValidated">
+                            Validated
+                          </ng-container>
+                          <ng-template #validate i18n="@@conventionValidate">
+                            Validate
+                          </ng-template>
+                        </button>
+
+                        <button (click)="archiveConvention(convention)" class="btn btn-danger btn-sm" i18n="@@archiveButton">
+                          Archive
+                        </button>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <button routerLink="/admins/archiveC" class="btn btn-group-sm btn-sm" i18n="@@archivedConventionsButton">
+              Archived Conventions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

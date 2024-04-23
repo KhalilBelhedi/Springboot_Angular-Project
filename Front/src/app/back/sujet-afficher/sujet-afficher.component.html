@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="flex-container">
+
+      <div class="content-container">
+        <div class="main-content">
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" [(ngModel)]="searchTerm" (input)="search()" placeholder="Chercher par nom d'entreprise">
+            </div>
+        <div class="col-md-12">
+          <!-- Button to add a new subject -->
+          <button class="btn btn-primary btn-sky-blue mb-3" (click)="ajouterSujet()">Ajouter un sujet</button>
+
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Sujets</h4>
+              <p class="card-category">Gérer les sujets</p>
+            </div>
+            <div class="card-body">
+              <div class="sujets-list">
+                <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+                <div *ngFor="let sujet of sujets; let i = index" class="sujet-item">
+                  <h2>{{ sujet.nomentreprise }}</h2>
+                  <h4>{{ sujet.titre }}</h4>
+                  <p><strong>Description:</strong> {{ sujet.description }}</p>
+                  <p><strong>Durée:</strong> {{ sujet.duree }}</p>
+                  <p><strong>Lieu:</strong> {{ sujet.lieu }}</p>
+                  <p><strong>Contact :</strong> {{ sujet.mailentreprise }}</p>
+                  <p><strong>Nombre d'étudiants requis:</strong> {{ sujet.nbretudiant }}</p>
+                  <p><strong>Exigences:</strong> {{ sujet.requirements }}</p>
+                  <p><strong>Type de sujet:</strong> {{ sujet.typesujet }}</p>
+                  <button class="btn btn-primary btn-sky-blue mb-3" (click)="afficherFormulaireModifier(i)">Modifier</button>
+                  <div *ngIf="sujetIndexToEdit === i">
+                    <form (submit)="modifierSujet(sujet)">
+                      <div class="form-group">
+                        <label for="titreSujet">Titre du sujet:</label>
+                        <input type="text" class="form-control" id="titreSujet" [(ngModel)]="sujet.titre" name="titreSujet" placeholder="Titre du sujet">
+                      </div>
+                      <div class="form-group">
+                        <label for="descriptionSujet">Description du sujet:</label>
+                        <textarea class="form-control" id="descriptionSujet" [(ngModel)]="sujet.description" name="descriptionSujet" placeholder="Description du sujet"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="dureSujet">Durée du sujet:</label>
+                        <input type="text" class="form-control" id="dureSujet" [(ngModel)]="sujet.duree" name="dureSujet" placeholder="Durée du sujet">
+                      </div>
+                      <div class="form-group">
+                        <label for="lieu">Lieu:</label>
+                        <input type="text" class="form-control" id="lieu" [(ngModel)]="sujet.lieu" name="lieu" placeholder="Lieu">
+                      </div>
+                      <div class="form-group">
+                        <label for="nbr_etudiant_required">Nombre d'étudiants requis:</label>
+                        <input type="number" class="form-control" id="nbr_etudiant_required" [(ngModel)]="sujet.nbretudiant" name="nbr_etudiant_required" placeholder="Nombre d'étudiants requis">
+                      </div>
+                      <div class="form-group">
+                        <label for="requirements">Exigences:</label>
+                        <textarea class="form-control" id="requirements" [(ngModel)]="sujet.requirements" name="requirements" placeholder="Exigences"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="typeSujet">Type de sujet:</label>
+                        <select class="form-control" id="typeSujet" [(ngModel)]="sujet.typesujet" name="typeSujet">
+                            <option value="STAGE_FORMATION_HUMAINE_SOCIALE">Stage Formation Humaine Sociale</option>
+                            <option value="STAGE_IMMERSION_ENTREPRISE">Stage Immersion Entreprise</option>
+                            <option value="STAGE_INGENIEUR">Stage Ingénieur</option>
+                        </select>
+                    </div>
+
+                      <!-- Submit button -->
+                      <button type="submit" class="btn btn-success">Enregistrer</button>
+                    </form>
+                  </div>
+                  <br>
+                  <!-- Button to delete -->
+                  <button class="btn btn-primary btn-sky-blue mb-3" (click)="supprimerSujet(sujet.idsujet)">Supprimer</button>
+                  <div class="container">
+                         <button class="btn btn-primary btn-sky-blue mb-3" (click)="displayPostulations(sujet.idsujet)">Afficher Postulations</button>
+                  </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

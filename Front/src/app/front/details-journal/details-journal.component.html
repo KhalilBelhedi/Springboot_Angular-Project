@@ -1,0 +1,88 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="card card-default">
+      <div  *ngIf="journal" class="card-header">
+
+
+        <h2>Journal Details</h2>
+
+        <p><strong>Remark:</strong> {{ journal.remarque }}</p>
+        <p><strong>Total Evaluation Score:</strong> {{ journal.totalNoteEvaluation }}</p>
+        <p><strong>Etat Journal:</strong> {{ journal.journalIsValid ? 'Journal Validé' : 'Journal Non Validé' }}</p>
+
+
+        <h1 style="padding-top: 16px">Tache List</h1>
+
+      </div>
+      <div class="card-body">
+
+        <table id="productsTable" class="table table-hover table-product" style="width:100%">
+
+          <thead>
+          <tr>
+            <th>Description</th>
+            <th>Date</th>
+           <!-- <th>isValid</th> -->
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let tache of taches">
+
+
+            <td>{{ tache.descriptiontache }}</td>
+            <td>{{ tache.datetache  }}</td>
+
+           <!-- <td>{{ tache.valid ? 'Yes' : 'No'  }}</td> -->
+            <td>{{ tache.status  }}</td>
+         <!--   <td>
+  <span *ngIf="tache.status === 'validé'">
+    <img src="assets/images/green-check-mark.svg" alt="Validé" style="width: 20px;">
+  </span>
+              <span *ngIf="tache.status !== 'validé'">
+    <img src="assets/images/red-cross-mark.svg" alt="Non validé" style="width: 20px;">
+  </span>
+            </td>
+-->
+
+
+
+            <a class="dropdown-item" style="color: rgb(10, 185, 194) ;"  (click)="updatevalidtache(tache)"><b>Valider</b><span class="mdi mdi-grease-pencil" style="padding-left: 37%;"></span></a>
+
+            <a class="dropdown-item" style="color: rgb(219, 64, 105) ;"  (click)="updatenonvalidtache(tache)"><b>A Refaire</b><span class="mdi mdi-grease-pencil" style="padding-left: 37%;"></span></a>
+
+
+            <!-- <button mat-button (click)="openUpdateTacheDialog(tache)">Modifier</button>-->
+            <!-- <a class="btn btn-danger"  (click)="openUpdateTacheDialog(tache)"><span class="fa fa-pencil"></span></a> -->
+            <!--            <button (click)="deleteTache(tache.idtache)">Supprimer</button>-->
+
+
+          </tr>
+          </tbody>
+
+        </table>
+        <!-- Separated Rounded Pagination -->
+
+
+      </div>
+      <div class="evaluation-button">
+
+        <button class="btn-evaluation" (click)="changeGrilleDetails()">
+
+        @if (!isGrilleDetailOpened) {
+          Evaluation
+        } @else {
+          close evaluatoin
+        }     </button>
+        @if (isGrilleDetailOpened) {
+          <app-grille-detail  />
+        }
+      </div>
+
+    </div>
+
+  </div>
+</div>

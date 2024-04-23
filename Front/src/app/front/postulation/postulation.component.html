@@ -1,0 +1,96 @@
+
+
+<div class="container">
+    <div class="flex-container">
+      <div class="nav-bar">
+      </div>
+      <div class="form-container">
+        <form [formGroup]="postulationForm" (ngSubmit)="submitForm()">
+          <fieldset>
+
+            <legend>Postuler</legend>
+
+            <div>
+
+                <label for="titrecandidature">Titre de la candidature:</label>
+                <input type="text" id="titrecandidature" formControlName="titrecandidature" required>
+                <div *ngIf="postulationForm.get('titrecandidature')?.invalid && postulationForm.get('titrecandidature')?.touched">
+                  <div *ngIf="postulationForm.get('titrecandidature')?.errors?.['required']">Le titre de la candidature est requis.</div>
+                </div>
+            </div>
+              <div>
+                <label for="region">Région:</label>
+                <select id="region" formControlName="region" required>
+                    <option value="">Sélectionnez une région</option>
+                    <option value="Ariana">Ariana</option>
+                    <option value="Beja">Béja</option>
+                    <option value="Ben Arous">Ben Arous</option>
+                    <option value="Bizerte">Bizerte</option>
+                    <option value="Gabès">Gabès</option>
+                    <option value="Gafsa">Gafsa</option>
+                    <option value="Jendouba">Jendouba</option>
+                    <option value="Kairouan">Kairouan</option>
+                    <option value="Kasserine">Kasserine</option>
+                    <option value="Kébili">Kébili</option>
+                    <option value="Le Kef">Le Kef</option>
+                    <option value="Mahdia">Mahdia</option>
+                    <option value="La Manouba">La Manouba</option>
+                    <option value="Médenine">Médenine</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Nabeul">Nabeul</option>
+                    <option value="Sfax">Sfax</option>
+                    <option value="Sidi Bouzid">Sidi Bouzid</option>
+                    <option value="Siliana">Siliana</option>
+                    <option value="Sousse">Sousse</option>
+                    <option value="Tataouine">Tataouine</option>
+                    <option value="Tozeur">Tozeur</option>
+                    <option value="Tunis">Tunis</option>
+                    <option value="Zaghouan">Zaghouan</option>
+                </select>
+                <div *ngIf="postulationForm.get('region')?.invalid && postulationForm.get('region')?.touched">
+                    <div *ngIf="postulationForm.get('region')?.errors?.['required']">La région est requise.</div>
+                </div>
+            </div>
+
+
+              <div>
+                <div class="date-container">
+                  <div>
+                    <label for="datedeb">Date de début:</label>
+                    <input type="date" id="datedeb" formControlName="datedeb" required>
+                    <div *ngIf="postulationForm.get('datedeb')?.invalid && postulationForm.get('datedeb')?.touched">
+                      <div *ngIf="postulationForm.get('datedeb')?.errors?.['required']">La date de début est requise.</div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="datefin">Date de fin:</label>
+                    <input type="date" id="datefin" formControlName="datefin" required>
+                    <div *ngIf="postulationForm.get('datefin')?.invalid && postulationForm.get('datefin')?.touched">
+                      <div *ngIf="postulationForm.get('datefin')?.errors?.['required']">La date de fin est requise.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div>
+              <label for="lettremotivation">Lettre de motivation:</label>
+              <textarea id="lettremotivation" formControlName="lettremotivation" required></textarea>
+              <div *ngIf="postulationForm.get('lettremotivation')?.invalid && postulationForm.get('lettremotivation')?.touched">
+                <div *ngIf="postulationForm.get('lettremotivation')?.errors?.['required']">La lettre de motivation est requise.</div>
+              </div>
+            </div>
+
+            <div>
+              <label for="comm">Commentaire:</label>
+              <textarea  id="comm" formControlName="comm" required></textarea>
+              <div *ngIf="postulationForm.get('comm')?.invalid && postulationForm.get('comm')?.touched">
+                <div *ngIf="postulationForm.get('comm')?.errors?.['required']">Le commentaire est requis.</div>
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit">Postuler</button>
+        </form>
+      </div>
+    </div>
+</div>

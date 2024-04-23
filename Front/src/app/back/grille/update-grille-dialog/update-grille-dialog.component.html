@@ -1,0 +1,15 @@
+
+<h2 mat-dialog-title>Mettre à jour la Grille</h2>
+<mat-dialog-content>
+  <form [formGroup]="updateGrilleForm">
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="descriptionGrille">
+    </mat-form-field>
+    <!-- Ajoutez d'autres champs si nécessaire -->
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onUpdategrille()">Mettre à jour</button>
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>

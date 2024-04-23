@@ -1,0 +1,97 @@
+/* Updated CSS for the .nav-bar class */
+.nav-bar {
+    /* Add styling for the navigation bar */
+    flex: 0 0 auto; /* Prevent the navigation bar from growing */
+    margin: 0; /* Remove any margin */
+  }
+  
+  /* Additional CSS for the container of the flex items */
+  .container {
+    display: flex;
+    justify-content: flex-start; /* Align flex items to the left */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+  }
+  
+  /* Updated CSS for the sidebar container */
+  .flex-container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+  }
+  
+  /* Additional CSS for the form container */
+  .form-container {
+    /* Add styling for the form container */
+    flex: 1; /* Allow the form container to grow and take up remaining space */
+    padding: 20px; /* Example padding for the form container */
+    margin-top: 50px; /* Add margin to the top */
+    background-color: #f9f9f9; /* Add background color */
+    border-radius: 5px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  }
+  
+  /* Additional styling for the form */
+  form {
+    max-width: 600px; /* Limit the maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  /* Styling for the form legend */
+  legend {
+    font-weight: bold;
+    color: #8b0101;
+  }
+  
+  /* Styling for the form fieldsets */
+  fieldset {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the form labels */
+  label {
+    color: #110a72;
+    font-weight: bold;
+  }
+  
+  /* Styling for the form inputs and textareas */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Styling for the form select */
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Styling for the submit button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Hover effect for the submit button */
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

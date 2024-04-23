@@ -1,0 +1,14 @@
+<div>
+  <h1 style="text-align: center; color: #6c43a1;"><b><u>Nouveau Grille</u></b></h1>
+  <br>
+  <form #ajouterBlocForm="ngForm">
+    <div style="text-align: center;">
+      <mat-form-field color="accent">
+        <input matInput placeholder="Grille" [(ngModel)]="nouvelleGrille.descriptionGrille" name="nomBloc" aria-label="Grille" required />
+      </mat-form-field>
+    </div>
+    <div style="text-align: center;">
+      <button class="custom-btn btn-8" mat-stroked-button color="accent" type="button" [disabled]="ajouterBlocForm.invalid" (click)="ajouterGrille()"><span><b>Ajouter</b></span></button>
+    </div>
+  </form>
+</div>

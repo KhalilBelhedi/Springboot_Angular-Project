@@ -1,0 +1,74 @@
+/* .grille-detail-container {
+  padding: 20px;
+}
+
+.evaluations-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.evaluations-table th,
+.evaluations-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.evaluations-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.appreciation-select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+} */
+.evaluations-container {
+  margin: 20px auto;
+  width: 80%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Couleurs d'arrière-plan selon l'appréciation */
+.table-striped > tbody > tr.excellent {
+  background-color: #00ff00;
+}
+
+.table-striped > tbody > tr.tresbon {
+  background-color: #77dd77;
+}
+
+.table-striped > tbody > tr.satisfaisant {
+  background-color: #ffff00;
+}
+
+.table-striped > tbody > tr.insatisfaisant {
+  background-color: #ff0000;
+}

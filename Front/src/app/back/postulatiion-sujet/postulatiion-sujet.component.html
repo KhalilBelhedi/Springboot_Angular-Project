@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="flex-container">
+      <div class="content-container">
+        <div class="main-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="container content"> <!-- Keep the existing 'container' class and add 'content' class -->
+                <div class="row">
+                  <!-- Search Input -->
+                </div>
+                <!-- Postulations List -->
+                <div class="row sujets-list"> <!-- Keep the existing 'row' class and add 'sujets-list' class -->
+                  <div class="col-md-12">
+
+                    <div class="postulations-list">
+                      <div *ngFor="let postulation of postulations" class="sujet-item"> <!-- Keep the existing 'sujet-item' class -->
+                        <!-- <h2>{{ postulation.user.nom }}</h2> -->
+                        <h4>{{ postulation.sujet.titre }}</h4>
+                        <p><strong>Nom entreprise :</strong> {{ postulation.sujet.nomentreprise }} </p>
+                        <p><strong>Sujet :</strong> {{ postulation.titrecandidature }} </p>
+                        <p><strong>Identifiant etudiant :</strong> {{ postulation.user.identifiant }} </p>
+                        <p><strong>Durée :</strong> {{ postulation.datedeb | date:'dd-MM-yyyy' }} - {{ postulation.datefin | date:'dd-MM-yyyy' }}</p>
+                        <p><strong>Lieu :</strong> {{ postulation.sujet.lieu }} </p>
+                        <p><strong>Lettre de motivation :</strong> {{ postulation.lettremotivation }} </p>
+                        <p><strong>Status:</strong> {{ postulation.status === 1 ? 'Accepté' : (postulation.status === 2 ? 'Refusé' : 'En attente') }}</p>
+                        <div class="button-container">
+                            <button class="confirm-button" (click)="confirmPostulation(postulation)">Confirmer</button>
+                            <button class="reject-button" (click)="rejectPostulation(postulation)">Refuser</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

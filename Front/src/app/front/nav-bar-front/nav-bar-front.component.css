@@ -1,0 +1,47 @@
+.navbar-nav {
+  width: 100%;
+}
+
+.nav-item.dropdown.ms-auto {
+  margin-left: auto;
+}
+.toolbar {
+  background-color: #001228;
+  color: white;
+  height: 12rex;
+  padding: 2rex;
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*left: 0;*/
+}
+.toolbar {
+  background-color: #001228;
+  color: white;
+  height: 12rex;
+  padding: 2rex;
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*left: 0;*/
+}
+.bar {
+  color: white;
+  padding: 1rem;
+  gap: 2rem;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-bottom: -1rex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  height: -webkit-fill-available;
+}
+.header{
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 18px;
+}
+.space{
+  margin-left: 1rex;
+}

@@ -1,0 +1,32 @@
+.evaluation-button {
+  text-align: center;
+  margin-top: 20px; /* Espacement du haut */
+}
+
+.btn-evaluation {
+  background-color: #800617; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 12px 24px; /* Espacement à l'intérieur du bouton */
+  font-size: 16px; /* Taille de la police */
+  border: none; /* Supprimer la bordure */
+  border-radius: 5px; /* Bordure arrondie */
+  cursor: pointer; /* Curseur de souris */
+  transition: background-color 0.3s; /* Animation de transition */
+}
+
+.btn-evaluation:hover {
+  background-color: #ba273b; /* Changement de couleur au survol */
+}
+
+/* .icon-validé {
+  background-image: url("../../../assets/images/green-check-mark.svg");
+  width: 20px;
+  height: 20px;
+}
+
+.icon-non-validé {
+  background-image: url("assets/images/red-cross-mark.svg");
+  width: 20px;
+  height: 20px;
+}
+*/

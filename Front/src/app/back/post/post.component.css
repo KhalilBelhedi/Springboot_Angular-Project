@@ -1,0 +1,12 @@
+#wrapper {
+  display: flex;
+}
+
+#sidebar {
+  /* Adjust width, min-width, or max-width as needed */
+  width: 250px; /* Example width */
+}
+
+#page-content-wrapper {
+  flex: 1; /* This allows the content wrapper to fill the rest of the horizontal space */
+}

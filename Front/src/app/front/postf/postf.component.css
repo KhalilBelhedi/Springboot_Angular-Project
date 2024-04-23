@@ -1,0 +1,67 @@
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.reddit-post {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.reddit-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.reddit-post-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Added margin for spacing between content and actions */
+}
+
+.post-main-content {
+  flex-grow: 1;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+}
+
+.like-dislike-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.like-dislike-buttons button,
+.like-dislike-buttons span {
+  flex-shrink: 0; /* Prevent buttons and span from shrinking */
+  flex-grow: 0; /* Prevent buttons and span from growing */
+  white-space: nowrap; /* Keep the button text on one line */
+  margin-right: 5px; /* Add some space between the buttons and the counts */
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}
+
+.btn-outline-primary {
+  border-color: blue;
+  color: blue;
+}
+
+.btn-outline-danger {
+  border-color: red;
+  color: red;
+}

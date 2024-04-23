@@ -1,0 +1,79 @@
+
+
+<div class="container">
+    <div class="flex-container">
+
+      <div class="form-container">
+  <form [formGroup]="sujetForm" (ngSubmit)="submitForm()">
+    <fieldset>
+      <button class="btn btn-primary btn-sky-blue mb-3" (click)="afficherSujet()">Liste des sujets</button>
+        <legend>Ajouter un sujet</legend>
+        <div>
+            <label for="titre">Titre du sujet:</label>
+            <input type="text" id="titre" formControlName="titre" [attr.required]="true">
+            <div *ngIf="sujetForm.get('titre')?.invalid && sujetForm.get('titre')?.touched">
+              <div *ngIf="sujetForm.get('titre')?.errors?.['required']">Titre du sujet est requis.</div>
+            </div>
+          </div>
+
+
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description" required></textarea>
+            <div *ngIf="sujetForm.get('description')?.invalid && sujetForm.get('description')?.touched">
+                <div *ngIf="sujetForm.get('description')?.errors?.['required']">description du sujet est requis.</div>
+              </div>
+        </div>
+        <div>
+            <label for="duree">Durée:</label>
+            <input type="number" id="duree" formControlName="duree" required min="0">
+        </div>
+        <div>
+            <label for="lieu">Lieu:</label>
+            <input type="text" id="lieu" formControlName="lieu" required>
+            <div *ngIf="sujetForm.get('lieu')?.invalid && sujetForm.get('lieu')?.touched">
+                <div *ngIf="sujetForm.get('lieu')?.errors?.['required']">lieu du sujet est requis.</div>
+              </div>
+        </div>
+        <div>
+            <label for="nbretudiant">Nombre d'étudiants requis:</label>
+            <input type="number" id="nbretudiant" formControlName="nbretudiant" required min="0">
+        </div>
+        <div>
+            <label for="requirements">Exigences:</label>
+            <textarea id="requirements" formControlName="requirements"></textarea>
+            <div *ngIf="sujetForm.get('requirements')?.invalid && sujetForm.get('requirements')?.touched">
+                <div *ngIf="sujetForm.get('requirements')?.errors?.['required']">requirements du sujet est requis.</div>
+              </div>
+        </div>
+        <div>
+            <label for="typesujet">Type de stage:</label>
+            <select id="typesujet" formControlName="typesujet" required>
+                <option value="{{ type }}" *ngFor="let type of TypeSujetValues">{{ type }}</option>
+            </select>
+        </div>
+        <div>
+            <label for="nomentreprise">Nom de l'entreprise:</label>
+            <input type="text" id="nomentreprise" formControlName="nomentreprise" required>
+            <div *ngIf="sujetForm.get('nomentreprise')?.invalid && sujetForm.get('nomentreprise')?.touched">
+                <div *ngIf="sujetForm.get('nomentreprise')?.errors?.['required']">Nom de l'entreprise est requis.</div>
+            </div>
+
+
+        </div>
+        <div>
+            <label for="mailentreprise">Email de l'entreprise:</label>
+            <input type="email" id="mailentreprise" formControlName="mailentreprise" required>
+            <div *ngIf="sujetForm.get('mailentreprise')?.invalid && sujetForm.get('mailentreprise')?.touched">
+              <div *ngIf="sujetForm.get('mailentreprise')?.errors?.['required']">Email de l'entreprise est requis.</div>
+              <div *ngIf="sujetForm.get('mailentreprise')?.errors?.['email']">Veuillez saisir une adresse e-mail valide.</div>
+            </div>
+       </div>
+
+    </fieldset>
+    <button type="submit">Submit</button>
+</form>
+
+</div>
+</div>
+</div>

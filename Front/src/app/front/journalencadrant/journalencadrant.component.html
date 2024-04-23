@@ -1,0 +1,57 @@
+
+<div class="row">
+  <div class="col-12">
+    <div class="card card-default">
+      <div  *ngIf="journals" class="card-header">
+
+        <table id="productsTable" class="table table-hover table-product" style="width:100%">
+
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Total Evaluation Score</th>
+            <th>Is Valid</th>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          <tr *ngFor="let journal of journals">
+            <td>{{ journal.idJournal  }}</td>
+            <td>{{  journal.remarque  }}</td>
+            <td>{{ journal.totalNoteEvaluation }}</td>
+            <td>{{ journal.journalIsValid ? 'Yes' : 'No' }}</td>
+
+
+
+            <a class="dropdown-item" style="color: rgb(16, 132, 14) ;"  (click)="detailjournal(journal)"><b>Details</b><span class="mdi mdi-grease-pencil" style="padding-left: 37%;"></span></a>
+            <!-- <button mat-button (click)="openUpdateTacheDialog(tache)">Modifier</button>-->
+            <!-- <a class="btn btn-danger"  (click)="openUpdateTacheDialog(tache)"><span class="fa fa-pencil"></span></a> -->
+          <!--  <a class="dropdown-item" style="color: rgb(226, 20, 20);" (click)="deleteTache(tache.idtache)"><b>Supprimer</b><span class="mdi mdi-delete" style="padding-left: 23%;"></span></a> -->
+            <!--            <button (click)="deleteTache(tache.idtache)">Supprimer</button>-->
+
+
+          </tr>
+          </tbody>
+
+        </table>
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+
+    <!-- Page content wrapper -->
+
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-danger">
+                <h4 class="card-title" i18n="@@archiveConventionTitle">Archive Convention</h4>
+                <p class="card-category" i18n="@@archivedConventionListDesc">List of Archived Conventions</p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="text-primary">
+                    <th i18n="@@conventionID">ID</th>
+                    <th i18n="@@conventionCompanyName">Nom Entreprise</th>
+                    <th i18n="@@conventionStartDate">Date Début</th>
+                    <th i18n="@@conventionEndDate">Date Fin</th>
+                    <th i18n="@@conventionAddress">Adresse</th>
+                    <th i18n="@@conventionPhoneNumber">Num Téléphone</th>
+                    <th i18n="@@conventionMentorName">Nom Encadrant</th>
+                    <th i18n="@@conventionMentorEmail">Email Encadrant</th>
+                    <th i18n="@@conventionValidity">Validité</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let convention of conventions">
+                      <td>{{ convention.idConvention }}</td>
+                      <td>{{ convention.nomEntreprise }}</td>
+                      <td>{{ convention.dateDebut | date: 'shortDate' }}</td>
+                      <td>{{ convention.dateFin | date: 'shortDate' }}</td>
+                      <td>{{ convention.adresse }}</td>
+                      <td>{{ convention.numTel }}</td>
+                      <td>{{ convention.nomEntreprise }}</td>
+                      <td>{{ convention.emailEncadrant }}</td>
+                      <!-- ... other table data cells ... -->
+
+                      <td>
+                        <button (click)="unarchiveConvention(convention)" class="btn btn-danger btn-sm" i18n="@@unarchiveButton">
+                          Get back from Archive
+                        </button>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <button routerLink="/admins/convention" class="btn btn-group-sm btn-sm" i18n="@@backToConventionsButton">
+              Back To Conventions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+

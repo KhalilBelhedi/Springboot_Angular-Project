@@ -1,0 +1,47 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title" i18n="@@conventionTitle">Convention</h4>
+            <p class="card-category" i18n="@@conventionListDesc">List of Conventions for Validation</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+
+                <th i18n="@@conventionCompanyName">Nom Entreprise</th>
+
+                <th i18n="@@conventionValidity">Status</th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let convention of conventions">
+
+                  <td>{{ convention.nomEntreprise }}</td>
+
+                  <!-- ... other table data cells ... -->
+                  <td>
+                    <ng-container *ngIf="convention.isvalid; else notValidated" i18n="@@validated">
+                      Validated
+                    </ng-container>
+                    <ng-template #notValidated i18n="@@notValidated">
+                      Not Validated
+                    </ng-template>
+                  </td>
+                  <td>
+
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

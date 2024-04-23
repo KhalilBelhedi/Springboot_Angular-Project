@@ -1,0 +1,65 @@
+<div id="page-content-wrapper">
+  <div class="container">
+    <h2>Posts</h2>
+    <div *ngFor="let post of posts" class="reddit-post">
+      <div class="reddit-post-header">
+        <span>{{ post.sujet_Post }}</span>
+        <span>{{ post.date_Post | date: 'short' }}</span>
+      </div>
+      <div class="reddit-post-content">
+        <div class="post-main-content">
+          <img *ngIf="post.profileImage" [src]="post.profileImage" alt="Profile Picture" class="profile-image">
+          <p>{{ post.contenu_Post }}</p>
+        </div>
+
+        <div class="post-actions">
+          <button class="btn btn-group-sm btn-sm" (click)="openReportPostForm(post.idPost)">Report Post</button>
+          <div *ngIf="showReportFormForPostId === post.idPost" class="report-form">
+            <p>Please describe the reason for reporting this post:</p>
+            <textarea [(ngModel)]="reportPostReason" name="reportPostReason" required></textarea>
+            <button class="btn btn-primary" (click)="reportPost(post.idPost,reportPostReason)">Submit Report</button>
+            <button class="btn btn-secondary" (click)="cancelReportPost()">Cancel</button>
+          </div>
+          <div class="like-dislike-buttons">
+            <button [ngClass]="{'btn-primary': post.isLikedByCurrentUser, 'btn-outline-primary': !post.isLikedByCurrentUser}" (click)="toggleLike(post)">
+              <i class="fa fa-thumbs-up"></i> Like
+            </button>
+            <span>{{ post.likes }}</span>
+            <button [ngClass]="{'btn-danger': post.isDislikedByCurrentUser, 'btn-outline-danger': !post.isDislikedByCurrentUser}" (click)="toggleDislike(post)">
+              <i class="fa fa-thumbs-down"></i> Dislike
+            </button>
+            <span>{{ post.dislikes }}</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-info" (click)="viewComments(post)">View Comments</button>
+
+      <div *ngIf="editingPost && editingPost.idPost === post.idPost" class="edit-form">
+        <!-- Editing form goes here -->
+      </div>
+      <div *ngIf="post.showComments" class="reddit-post-comments">
+        <ul *ngIf="post.commentaireSet && post.commentaireSet.length">
+          <li *ngFor="let comment of post.commentaireSet">
+            {{ comment.content }} - {{ comment.date_commentaire | date: 'short' }}
+
+          </li>
+        </ul>
+        <p *ngIf="!post.commentaireSet || !post.commentaireSet.length">No comments available.</p>
+        <button class="btn btn-dark" (click)="showAddCommentForm = !showAddCommentForm">Add Comment</button>
+        <form *ngIf="showAddCommentForm" #commentForm="ngForm" (ngSubmit)="addComment(post, commentForm)">
+          <div class="form-group">
+            <textarea class="form-control" [(ngModel)]="newCommentContent" name="commentContent" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-group-sm btn-sm">Submit Comment</button>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="post-actions" >
+      <button  class="btn btn-dark " routerLink ="/user/myposts">My Posts</button>
+      </div>
+    </div>
+  </div>
+
+</div>

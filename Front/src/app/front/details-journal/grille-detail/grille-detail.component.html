@@ -1,0 +1,53 @@
+
+
+<!--
+<div *ngIf="journal" class="grille-detail-container">
+
+  <h3>Évaluation:</h3>
+  <table class="evaluations-table">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Note Evaluation</th>
+      <th>Appreciation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let eval of evals">
+      <td>{{ eval.description }}</td>
+      <td>{{ eval.noteEvaluation }}</td>
+      <td>
+        <select [(ngModel)]="eval.appreciation" class="appreciation-select">
+          <option *ngFor="let appreciation of appreciationOptions" [value]="appreciation">{{ appreciation }}</option>
+        </select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div> -->
+<div class="evaluations-container">
+  <h2>Evaluations</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Note</th>
+      <th>Appréciation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let eval of evals">
+      <td>{{ eval.description }}</td>
+      <td>{{ eval.noteEvaluation }}</td>
+
+      <td>
+        <select [(ngModel)]="eval.appreciation" class="custom-select" (ngModelChange)="onAppreciationChange(eval.idEvaluation, $event)">
+          <option *ngFor="let appreciation of appreciationOptions" [value]="appreciation">
+            {{ appreciation }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

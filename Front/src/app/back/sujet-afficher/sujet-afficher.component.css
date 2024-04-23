@@ -1,0 +1,70 @@
+/* styles.css */
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 20px;
+  margin-bottom: 10px; /* Add margin-bottom to create space below the input */
+  width: 300px;
+}
+/* Updated CSS for the .nav-bar class */
+.nav-bar {
+    /* Add styling for the navigation bar */
+    flex: 0 0 auto; /* Prevent the navigation bar from growing */
+    margin: 0; /* Remove any margin */
+  }
+  
+  
+  /* Additional CSS for the container of the flex items */
+  .container {
+    display: flex;
+    justify-content: flex-start; /* Align flex items to the left */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+  }
+  
+  /* Updated CSS for the sidebar container */
+  .flex-container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+  }
+  
+  /* Additional CSS for the content container */
+  .content-container {
+    /* Add styling for the content container */
+    flex: 1; /* Allow the content container to grow and take up remaining space */
+    padding: 20px; /* Example padding for the content container */
+  }
+  
+  /* Additional styling for the card */
+  .card {
+    margin-top: 20px; /* Add margin to the top of the card */
+  }
+  
+  /* Styling for the card header */
+  .card-header {
+    font-weight: bold;
+    background-color: #ccc; /* Change the background color of the card header */
+    color: #000000; /* Change the text color of the card header */
+  }
+  
+  /* Styling for the card title */
+  .card-title {
+    font-size: 1.25rem; /* Adjust the font size of the card title */
+    margin-bottom: 0.5rem; /* Add margin to the bottom of the card title */
+  }
+  
+  /* Styling for the card category */
+  .card-category {
+    font-size: 0.875rem; /* Adjust the font size of the card category */
+  }
+  
+
+  /* Additional CSS for the sujet item */
+.sujet-item {
+    margin-bottom: 50px; /* Add margin-bottom to separate each sujet */
+  }
+  

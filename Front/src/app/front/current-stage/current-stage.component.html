@@ -1,0 +1,46 @@
+
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-danger">
+                <h4 class="card-title" i18n="@@conventionTitle">Stage</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="text-primary">
+                    <th i18n="@@conventionID">ID</th>
+                    <th i18n="@@conventionCompanyName">Sujet Stage</th>
+                    <th i18n="@@conventionStartDate">NoteStage</th>
+                    <th i18n="@@conventionEndDate">Rapport</th>
+
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let stage of stage">
+
+                      <td>{{ stage.idStage }}</td>
+                      <td>{{ stage.sujet_Stage }}</td>
+                      <td>{{ stage.note_stage  }}</td>
+                      <td>{{ stage.nom_fichier_rapport  }}</td>
+                      <!-- ... other table data cells ... -->
+                    </tr>
+                    </tbody>
+                  </table>
+                  <!-- Existing table and other elements -->
+
+                  <td>
+                    <input type="file" (change)="onFileSelected($event, stage)"  #fileInput>
+                    <button type="button" (click)="uploadFile(stage)" >Upload</button>
+                  </td>
+
+                  <!-- Continue with other table data cells or closing tags -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

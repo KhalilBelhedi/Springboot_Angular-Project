@@ -1,0 +1,24 @@
+
+
+<body>
+
+
+<div class="app">
+    <div *ngIf="resultMessage" [class]="resultMessage.type">
+        {{ resultMessage.result.status == 200 ? 'Success: ' + resultMessage.result.message : 'Error: ' + resultMessage.result.message }}
+    </div>
+    <h3>Ajouter votre demande de stage </h3>
+    <input type="file" (change)="handleFileChange($event, 'DEMANDE_STAGE')" />
+    <button (click)="handleUpload(selectedDemandeStageFile, 'DEMANDE_STAGE')" [disabled]="!selectedDemandeStageFile">Télécharger</button>
+
+    <h3 style="margin-top: 70px;">Ajouter votre attestation </h3>
+    <input type="file" (change)="handleFileChange($event, 'ATTESTATION')" />
+    <button (click)="handleUpload(selectedAttestationFile, 'ATTESTATION')" [disabled]="!selectedAttestationFile">Télécharger</button>
+
+    <h3 style="margin-top: 70px;">Ajouter votre Rapport </h3>
+    <input type="file" (change)="handleFileChange($event, 'RAPPORT')" />
+    <button (click)="handleUpload(selectedRapportFile, 'RAPPORT')" [disabled]="!selectedRapportFile">Télécharger</button>
+</div>
+
+
+ </body>
